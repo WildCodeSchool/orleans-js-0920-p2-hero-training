@@ -1,38 +1,24 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Red+Rose:wght@300&display=swap');
+@import url('https://fonts.google.com/specimen/Open+Sans?selection.family=Open+Sans:wght@600|Red+Rose:wght@300&query=Open+');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+    --main-font : "Red Rose", cursive;
+    --secondary-font : "Open Sans", cursive;
+    --main-color-font: rgba(0,0,77,1);
+    --secondary-color-font: rgba(255,255,255,1);
+    --spacing : 8px;
+    --spacing-medium : calc(var(--spacing) * 2);
+    --spacing-large : calc(var(--spacing) * 4);
+    --main-color: rgba(0,0,0,0.56); 
+    --secondary-color: rgba(0,10,10,1);
+    --border-color : rgba(0,0,20,1);
+    --border-size : 4px;
+    --border-radius: ;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+* {
+    box-sizing: border-box;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body {
+    margin: 0;
+    padding: 0;
 }
