@@ -1,115 +1,84 @@
-@import '../../App.css';
+@import "../../App.css";
 
 html {
   background-color: #000008;
-  background-image: url('https://www.transparenttextures.com/patterns/diagmonds.png');
+  background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
 }
 
-
-.heroOne, .mainHero {
-
-  
-  width: 150px;
-  height: 150px;
-  border: 3px solid var(--main-color);
-  cursor: pointer;
+.mainHero img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 5px solid var(--main-color);
+  margin:0px 50px;
+  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+      0 15px 40px rgba(166, 173, 201, 0.2);
+}
+.mainHero{
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items:center;
+  margin-top: 100px;
+}
+.mainHero h3{
+  font-size:28px;
+  color: azure;
+    --color1: rgb(0, 255, 255);
+    --color2: rgb(46, 16, 16);
+    --color3: dodgerblue;
+    --color4: blue;
+    --interval: 1s;
+    text-shadow: 
+      0 0 5px var(--color1),
+      0 0 5px var(--color2),
+      0 0 5px var(--color3),
+      0 0 5px var(--color4);
+    will-change: filter, color;
+    filter: saturate(60%);
+    animation: flicker steps(100) var(--interval) 1s infinite;
 }
 
-.heroLineUp, .heroLineDown {
-  margin-top: 80px;
+.heroLineUpContainer {
+  display:none;
 }
 
-/* Breakpoints */
+.heroLineUpSmallContainer{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  .heroLineUp {
+@media screen (min-width: 768px) and (max-width: 1022px) {
+  .mainHero {
+    margin-top: auto;
+  }
+}
+
+@media screen and (min-width:1023px){
+  .heroLineUpContainer {
     display: flex;
     justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
   }
-
-  .mainHero {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .heroOne {
+  .heroLineUpSmallContainer{
     display: none;
   }
-  .heroLineDown {
-    display: none;
+  .mainHero{
+    margin:0px 10px;
+    margin-top: 100px;
   }
+} 
 
-  .heroOne, .mainHero {
-    border-radius: 85%;
-    width: 150px;
-    height: 150px;
-    border: 5px solid var(--main-color);
+@media screen and (min-width:1280px){
+  .mainHero{
+    margin:0px 60px;
+    margin-top: 100px;
   }
 }
-
-/* iPads (portrait and landscape) ----------- */
-@media only screen and (min-device-width: 481px) and (max-device-width: 1023px) {
-  .heroLineUp {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@media screen and (min-width:1650px){
+  .mainHero{
+    margin:0px 100px;
+    margin-top: 100px;
   }
-
-  .mainHero {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
-      0 15px 40px rgba(166, 173, 201, 0.2);
-  }
-
-  .heroOne {
-    display: none;
-  }
-  .heroLineDown {
-    display: none;
-  }
-
-  .heroOne, .mainHero {
-    border-radius: 85%;
-    width: 150px;
-    height: 150px;
-    border: 5px solid var(--main-color);
-  }
-}
-
-/* Desktop ----------- */
-@media only screen and (min-device-width: 1024px) {
-  .heroLineUp {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: stretch;
-    align-content: flex-start;
-  }
-
-  .heroLineDown {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: stretch;
-    align-content: flex-end;
-  }
-
-  .heroOne, .mainHero {
-    border-radius: 85%;
-    width: 150px;
-    height: 150px;
-    box-shadow: 0 5px 10px rgba(236, 236, 238, 0.05),
-      0 15px 40px rgba(166, 173, 201, 0.2);
-  }
-
-  
 }
