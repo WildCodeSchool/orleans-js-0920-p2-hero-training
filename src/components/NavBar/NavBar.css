@@ -1,0 +1,47 @@
+@import '../../App.css';
+
+ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  width: 100vw;
+  justify-content: center;
+}
+
+.LinkNav {
+  padding: 0% 3%;
+  text-decoration: none;
+  color: azure;
+  --color1: rgb(0, 255, 255);
+  --color2: rgb(46, 16, 16);
+  --color3: dodgerblue;
+  --color4: blue;
+  --interval: 1s;
+  text-shadow: 0 0 5px var(--color1), 0 0 5px var(--color2),
+    0 0 5px var(--color3), 0 0 5px var(--color4);
+  will-change: filter, color;
+  filter: saturate(60%);
+  animation: flicker steps(100) var(--interval) 1s infinite;
+  font-family: var(--main-font);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.navbar-container {
+  position: fixed;
+  bottom: 0;
+  background-color: var(--main-color);
+  border-radius: 80% 80% 0% 0%;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .LinkNav {
+    font-size: 28px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .navbar-container {
+    display: none;
+  }
+}
