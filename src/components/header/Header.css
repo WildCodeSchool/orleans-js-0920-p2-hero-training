@@ -57,7 +57,7 @@
       flex: 2;
       font-size: 50px;
     }
-    img {
+    .logo_small {
       padding: 0px var(--spacing-large);
     }
   }
