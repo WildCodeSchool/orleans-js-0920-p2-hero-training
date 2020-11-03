@@ -9,20 +9,20 @@ function NavBar() {
           <ul>
             <li>
               {' '}
-              <Link to="/stats" className="LinkNav">
+              <Link to="/stats" className="nav-link">
                 STATS
               </Link>
             </li>
-            <li className="LinkNav">|</li>
+            <li className="nav-link">|</li>
             <li>
-              <Link to="/program" className="LinkNav">
+              <Link to="/program" className="nav-link">
                 PROGRAM
               </Link>
             </li>
 
-            <li className="LinkNav">|</li>
+            <li className="nav-link">|</li>
             <li>
-              <Link to="/food" className="LinkNav">
+              <Link to="/food" className="nav-link">
                 FOOD
               </Link>
             </li>
