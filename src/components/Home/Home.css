@@ -1,0 +1,115 @@
+@import '../../App.css';
+
+html {
+  background-color: #000008;
+  background-image: url('https://www.transparenttextures.com/patterns/diagmonds.png');
+}
+
+
+.heroOne, .mainHero {
+
+  
+  width: 150px;
+  height: 150px;
+  border: 3px solid var(--main-color);
+  cursor: pointer;
+}
+
+.heroLineUp, .heroLineDown {
+  margin-top: 80px;
+}
+
+/* Breakpoints */
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .heroLineUp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mainHero {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .heroOne {
+    display: none;
+  }
+  .heroLineDown {
+    display: none;
+  }
+
+  .heroOne, .mainHero {
+    border-radius: 85%;
+    width: 150px;
+    height: 150px;
+    border: 5px solid var(--main-color);
+  }
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 481px) and (max-device-width: 1023px) {
+  .heroLineUp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mainHero {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+      0 15px 40px rgba(166, 173, 201, 0.2);
+  }
+
+  .heroOne {
+    display: none;
+  }
+  .heroLineDown {
+    display: none;
+  }
+
+  .heroOne, .mainHero {
+    border-radius: 85%;
+    width: 150px;
+    height: 150px;
+    border: 5px solid var(--main-color);
+  }
+}
+
+/* Desktop ----------- */
+@media only screen and (min-device-width: 1024px) {
+  .heroLineUp {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: stretch;
+    align-content: flex-start;
+  }
+
+  .heroLineDown {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: stretch;
+    align-content: flex-end;
+  }
+
+  .heroOne, .mainHero {
+    border-radius: 85%;
+    width: 150px;
+    height: 150px;
+    box-shadow: 0 5px 10px rgba(236, 236, 238, 0.05),
+      0 15px 40px rgba(166, 173, 201, 0.2);
+  }
+
+  
+}
