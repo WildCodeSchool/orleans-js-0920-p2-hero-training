@@ -2,7 +2,8 @@
 
 html {
   background-color: #000008;
-  background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
+  background-image: url("https://image.freepik.com/free-vector/dark-wavy-background_23-2148421508.jpg");
+  background-size: cover;
 }
 
 .mainHero img {
@@ -10,75 +11,154 @@ html {
   height: 200px;
   border-radius: 50%;
   border: 5px solid var(--main-color);
-  margin:0px 50px;
+  margin: 0px 32px;
   box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
-      0 15px 40px rgba(166, 173, 201, 0.2);
+    0 15px 40px rgba(166, 173, 201, 0.2);
 }
-.mainHero{
-  display:flex;
-  flex-direction:column;
+.mainHero {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items:center;
+  align-items: center;
   margin-top: 100px;
 }
-.mainHero h3{
-  font-size:28px;
+.mainHero h3 {
+  font-size: 28px;
   color: azure;
-    --color1: rgb(0, 255, 255);
-    --color2: rgb(46, 16, 16);
-    --color3: dodgerblue;
-    --color4: blue;
-    --interval: 1s;
-    text-shadow: 
-      0 0 5px var(--color1),
-      0 0 5px var(--color2),
-      0 0 5px var(--color3),
-      0 0 5px var(--color4);
-    will-change: filter, color;
-    filter: saturate(60%);
-    animation: flicker steps(100) var(--interval) 1s infinite;
+  --color1: rgb(0, 255, 255);
+  --color2: rgb(46, 16, 16);
+  --color3: dodgerblue;
+  --color4: blue;
+  --interval: 1s;
+  text-shadow: 0 0 5px var(--color1), 0 0 5px var(--color2),
+    0 0 5px var(--color3), 0 0 5px var(--color4);
+  will-change: filter, color;
+  filter: saturate(60%);
+  animation: flicker steps(100) var(--interval) 1s infinite;
 }
 
 .heroLineUpContainer {
-  display:none;
+  display: none;
 }
 
-.heroLineUpSmallContainer{
+.heroLineUpSmallContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction:row;
+  justify-content: center;
+}
+
+.buttonDesktop {
+  display: none;
+}
+
+
+.buttonContainer {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+
+}
+.buttonMobile{
+  width:20%;
+}
+.primaryContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-@media screen (min-width: 768px) and (max-width: 1022px) {
+
+
+
+.button {
+  position: relative;
+  background-color: #4CAF50;
+  border: none;
+  font-size: 28px;
+  color: #FFFFFF;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1022px) {
   .mainHero {
-    margin-top: auto;
+    margin-top: 100px;
+  }
+  .heroLineUpSmallContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
   }
 }
 
-@media screen and (min-width:1023px){
+@media screen and (min-width: 1023px) {
+  .buttonDesktop {
+    display: flex;
+    width: 15%;
+  }
   .heroLineUpContainer {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
   }
-  .heroLineUpSmallContainer{
+  .heroLineUpSmallContainer {
     display: none;
   }
-  .mainHero{
-    margin:0px 10px;
+  .mainHero {
+    margin: 0px 0px;
     margin-top: 100px;
   }
-} 
-
-@media screen and (min-width:1280px){
-  .mainHero{
-    margin:0px 60px;
-    margin-top: 100px;
+  .buttonDesktop {
+    display: flex;
+    width: 10%;
+  }
+  .buttonContainer {
+    display: none;
+  
   }
 }
-@media screen and (min-width:1650px){
-  .mainHero{
-    margin:0px 100px;
+
+@media screen and (min-width: 1280px) {
+  .mainHero {
+    margin: 0px 60px;
     margin-top: 100px;
+  }
+  .buttonContainer {
+    display: none;
+  
+  }
+}
+@media screen and (min-width: 1650px) {
+  .mainHero {
+    margin: 0px 100px;
+    margin-top: 100px;
+  }
+  .buttonContainer {
+    display: none;
+  
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .mainHero {
+    margin: 0px 100px;
+    margin-top: 100px;
+  }
+  .buttonContainer {
+    display: none;
+  
+  }
+
+  .heroLineUpContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 }
