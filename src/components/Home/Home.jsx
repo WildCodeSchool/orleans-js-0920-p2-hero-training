@@ -1,9 +1,19 @@
 import React from "react";
 import "./Home.css";
 import Header from "../header/Header.jsx";
-import HeroCircle from "./HeroCircle";
-import LeftChevron from "../../assets/left-chevron.svg";
-import RightChevron from "../../assets/right-chevron.svg";
+import CircularProgress from "@material-ui/core/CircularProgress";
+import shortid from "shortid";
+
+function HeroCircle({ image, name }) {
+  return (
+    <div className="mainHero ">
+      <img src={image} alt={name} className="rotateOut " />
+      <div>
+        <h3>{name}</h3>
+      </div>
+    </div>
+  );
+}
 
 class Home extends React.Component {
   constructor(props) {
@@ -15,7 +25,7 @@ class Home extends React.Component {
       thirdHero: 2,
       fourthHero: 3,
       fifthHero: 4,
-      sixHero:0
+      sixHero: 0,
     };
     this.incrementHero = this.incrementHero5.bind(this);
     this.decrementHero = this.decrementHero5.bind(this);
@@ -76,17 +86,20 @@ class Home extends React.Component {
       this.setState({ sixHero: sixHero - 1 });
     }
   };
+  getId = () => {
+    const id = shortid.generate();
+    return id;
+  };
+
   render() {
     return (
       <div className="home">
         <Header />
-        <div className="primaryContainer">
-          <img
-            src={LeftChevron}
-            onClick={this.decrementHero5}
-            className="buttonDesktop"
-            alt="Left"
-          />
+        <div className="primaryContainer" key={this.getId()}>
+          <button className="glow-on-hover" onClick={this.decrementHero5}>
+            {" "}
+            Previous{" "}
+          </button>
           <div className="heroLineUpContainer">
             {this.state.heros ? (
               <HeroCircle
@@ -94,7 +107,7 @@ class Home extends React.Component {
                 {...this.state.heros[this.state.firstHero]}
               />
             ) : (
-              <p>loading</p>
+              <CircularProgress className="loading" />
             )}
             {this.state.heros ? (
               <HeroCircle
@@ -102,7 +115,7 @@ class Home extends React.Component {
                 {...this.state.heros[this.state.secondHero]}
               />
             ) : (
-              <p>loading</p>
+              <p></p>
             )}
             {this.state.heros ? (
               <HeroCircle
@@ -110,7 +123,7 @@ class Home extends React.Component {
                 {...this.state.heros[this.state.thirdHero]}
               />
             ) : (
-              <p>loading</p>
+              <p></p>
             )}
             {this.state.heros ? (
               <HeroCircle
@@ -118,7 +131,7 @@ class Home extends React.Component {
                 {...this.state.heros[this.state.fourthHero]}
               />
             ) : (
-              <p>loading</p>
+              <p></p>
             )}
             {this.state.heros ? (
               <HeroCircle
@@ -126,36 +139,30 @@ class Home extends React.Component {
                 {...this.state.heros[this.state.fifthHero]}
               />
             ) : (
-              <p>loading</p>
+              <p></p>
             )}
           </div>
-          <img
-            src={RightChevron}
-            alt="Right"
-            className="buttonDesktop"
-            onClick={this.incrementHero5}
-          />
-          <div className="heroLineUpSmallContainer">
+          <button className="glow-on-hover" onClick={this.incrementHero5}>
+            Next
+          </button>
+        </div>
+        <div className="heroLineUpSmallContainer" key={this.getId()}>
+          <section>
             {this.state.heros ? (
               <HeroCircle {...this.state.heros[this.state.sixHero]} />
             ) : (
               <p>loading</p>
             )}
-            <div className="buttonContainer">
-              <img
-                src={LeftChevron}
-                onClick={this.decrementHero1}
-                className="buttonMobile"
-                alt="Left"
-              />
-              <img
-                src={RightChevron}
-                alt="Right"
-                className="buttonMobile"
-                onClick={this.incrementHero1}
-              />
+            <div className="smallButtonContainer">
+              <button className="glow-on-hover" onClick={this.decrementHero1}>
+                Previous
+              </button>
+
+              <button className="glow-on-hover" onClick={this.incrementHero1}>
+                Next
+              </button>
             </div>
-          </div>
+          </section>
         </div>
       </div>
     );

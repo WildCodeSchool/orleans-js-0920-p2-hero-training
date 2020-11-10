@@ -1,9 +1,94 @@
 @import "../../App.css";
 
-html {
-  background-color: #000008;
-  background-image: url("https://image.freepik.com/free-vector/dark-wavy-background_23-2148421508.jpg");
+.loading{
+  margin-top:500px;
+  
+}
+body{
+  background-image: url("https://zupimages.net/up/20/45/mgli.jpg");
+  -webkit-background-size: cover;
   background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.glow-on-hover {
+  width: 110px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: azure;
+  background: var(--main-color);
+  cursor: pointer;
+  position: relative;
+  margin: 10px;
+  z-index: 0;
+  font-family: var(--main-font);
+  border-radius: 10%;
+  font-size: 20px;
+}
+
+.glow-on-hover:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover:active {
+  color: #000;
+}
+
+.glow-on-hover:active:after {
+  background: transparent;
+}
+
+.glow-on-hover:hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }
 
 .mainHero img {
@@ -11,16 +96,23 @@ html {
   height: 200px;
   border-radius: 50%;
   border: 5px solid var(--main-color);
-  margin: 0px 32px;
+  margin: 0px 5px;
   box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
-    0 15px 40px rgba(166, 173, 201, 0.2);
+    0 15px 40px rgba(166, 173, 201, 0.5);
 }
+.mainHero img:hover {
+  
+  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+    0 15px 40px rgba(166, 173, 201, 1);
+}
+
 .mainHero {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 56px;
+  cursor: pointer;
 }
 .mainHero h3 {
   font-size: 28px;
@@ -36,73 +128,51 @@ html {
   filter: saturate(60%);
   animation: flicker steps(100) var(--interval) 1s infinite;
 }
-
-.heroLineUpContainer {
-  display: none;
-}
-
 .heroLineUpSmallContainer {
+  height: 100vh;
+}
+.heroLineUpSmallContainer section {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction:row;
+  flex-direction: column;
   justify-content: center;
-}
-
-.buttonDesktop {
-  display: none;
-}
-
-
-.buttonContainer {
-  display: flex;
-  justify-content: center;
-
-}
-.buttonMobile{
-  width:20%;
+  align-items: center;
 }
 .primaryContainer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: none;
 }
-
-
-
-
-.button {
-  position: relative;
-  background-color: #4CAF50;
-  border: none;
-  font-size: 28px;
-  color: #FFFFFF;
-  padding: 20px;
-  width: 200px;
-  text-align: center;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-  text-decoration: none;
-  overflow: hidden;
-  cursor: pointer;
+.buttonMobile {
+  width: 20%;
 }
-
 @media screen and (min-width: 768px) and (max-width: 1022px) {
   .mainHero {
-    margin-top: 100px;
-  }
-  .heroLineUpSmallContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: auto;
+    margin: 28px 100px;
   }
 }
 
 @media screen and (min-width: 1023px) {
-  .buttonDesktop {
-    display: flex;
-    width: 15%;
+  .glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: azure;
+    background: var(--main-color);
+    cursor: pointer;
+    position: relative;
+    margin: 50px;
+    z-index: 0;
+    font-family: var(--main-font);
+    border-radius: 10%;
+    font-size: 20px;
   }
+  .primaryContainer {
+    display: flex;
+    align-items: center;
+    padding-bottom: 3.35%;
+    justify-content: space-between;
+
+  }
+
   .heroLineUpContainer {
     display: flex;
     justify-content: center;
@@ -113,7 +183,7 @@ html {
   }
   .mainHero {
     margin: 0px 0px;
-    margin-top: 100px;
+    margin-top: 56px;
   }
   .buttonDesktop {
     display: flex;
@@ -121,39 +191,32 @@ html {
   }
   .buttonContainer {
     display: none;
-  
   }
 }
 
 @media screen and (min-width: 1280px) {
   .mainHero {
-    margin: 0px 60px;
-    margin-top: 100px;
+    margin: 25px 60px;
   }
   .buttonContainer {
     display: none;
-  
   }
 }
 @media screen and (min-width: 1650px) {
   .mainHero {
-    margin: 0px 100px;
-    margin-top: 100px;
+    margin: 28px 100px;
   }
   .buttonContainer {
     display: none;
-  
   }
 }
 
 @media screen and (min-width: 1920px) {
   .mainHero {
-    margin: 0px 100px;
-    margin-top: 100px;
+    margin: 28px 100px;
   }
   .buttonContainer {
     display: none;
-  
   }
 
   .heroLineUpContainer {
@@ -162,3 +225,41 @@ html {
     flex-wrap: wrap;
   }
 }
+
+.rotateOut {
+  -webkit-animation-name: rotateOut;
+  animation-name: rotateOut;
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes rotateOut {
+  0% {
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 0;
+  }
+  100% {
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  -webkit-transform: rotate3d(0, 0, 1, 360deg);
+  transform: rotate3d(0, 0, 1, 360deg);
+  opacity: 1;
+  }
+  }
+  @keyframes rotateOut {
+  0% {
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 0;
+  }
+  100% {
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  -webkit-transform: rotate3d(0, 0, 1, 360deg);
+  transform: rotate3d(0, 0, 1, 360deg);
+  opacity: 1;
+  }
+  } 
+
