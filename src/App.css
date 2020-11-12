@@ -16,9 +16,13 @@
     --border-radius: ;
 }
 * {
-    box-sizing: border-box;
+    box-sizing: content-box;
 }
-body {
+body, html {
     margin: 0;
     padding: 0;
+}
+
+img {
+    cursor: pointer;
 }
