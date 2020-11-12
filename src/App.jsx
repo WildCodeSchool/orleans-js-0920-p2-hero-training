@@ -1,6 +1,6 @@
-import Home from "./components/Home/Home";
+import Home from "./components/home/Home";
 import { Switch, Route } from "react-router-dom";
-import Hero from "./components/herocard/Hero";
+import Hero from "./components/hero/Hero";
 
 function App() {
   return (
