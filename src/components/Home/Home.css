@@ -113,6 +113,7 @@ body{
   align-items: center;
   margin-top: 56px;
   cursor: pointer;
+  
 }
 .mainHero h3 {
   font-size: 28px;
@@ -143,13 +144,13 @@ body{
 .buttonMobile {
   width: 20%;
 }
-@media screen and (min-width: 768px) and (max-width: 1022px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .mainHero {
     margin: 28px 100px;
   }
 }
 
-@media screen and (min-width: 1023px) {
+@media screen and (min-width: 1024px) {
   .glow-on-hover {
     width: 220px;
     height: 50px;
@@ -159,7 +160,7 @@ body{
     background: var(--main-color);
     cursor: pointer;
     position: relative;
-    margin: 50px;
+    margin: 1px;
     z-index: 0;
     font-family: var(--main-font);
     border-radius: 10%;
@@ -196,7 +197,7 @@ body{
 
 @media screen and (min-width: 1280px) {
   .mainHero {
-    margin: 25px 60px;
+    margin: 28px 20px;
   }
   .buttonContainer {
     display: none;

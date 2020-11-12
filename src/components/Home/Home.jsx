@@ -2,6 +2,7 @@ import React from "react";
 import "./Home.css";
 import Header from "../header/Header.jsx";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import { Link } from "react-router-dom";
 import shortid from "shortid";
 
 function HeroCircle({ image, name }) {
@@ -92,6 +93,12 @@ class Home extends React.Component {
   };
 
   render() {
+    let firstHeroUrl = `/hero/${this.state.firstHero}`;
+    let secondeHeroUrl = `/hero/${this.state.secondHero}`;
+    let thirdHeroUrl = `/hero/${this.state.thirdHero}`;
+    let fourthHeroUrl = `/hero/${this.state.fourthHero}`;
+    let fifthHeroUrl = `/hero/${this.state.fifthHero}`;
+    let sixHeroUrl = `/hero/${this.state.sixHero}`;
     return (
       <div className="home">
         <Header />
@@ -102,42 +109,52 @@ class Home extends React.Component {
           </button>
           <div className="heroLineUpContainer">
             {this.state.heros ? (
-              <HeroCircle
-                className="heroLine"
-                {...this.state.heros[this.state.firstHero]}
-              />
+              <Link to={firstHeroUrl} style={{ textDecoration: 'none' }}>
+                <HeroCircle
+                  className="heroLine"
+                  {...this.state.heros[this.state.firstHero]}
+                />
+              </Link>
             ) : (
               <CircularProgress className="loading" />
             )}
             {this.state.heros ? (
-              <HeroCircle
-                className="heroLine"
-                {...this.state.heros[this.state.secondHero]}
-              />
+              <Link to={secondeHeroUrl} style={{ textDecoration: 'none' }}>
+                <HeroCircle
+                  className="heroLine"
+                  {...this.state.heros[this.state.secondHero]}
+                />
+              </Link>
             ) : (
               <p></p>
             )}
             {this.state.heros ? (
-              <HeroCircle
-                className="heroLine"
-                {...this.state.heros[this.state.thirdHero]}
-              />
+              <Link to={thirdHeroUrl} style={{ textDecoration: 'none' }}>
+                <HeroCircle
+                  className="heroLine"
+                  {...this.state.heros[this.state.thirdHero]}
+                />
+              </Link>
             ) : (
               <p></p>
             )}
             {this.state.heros ? (
-              <HeroCircle
-                className="heroLine"
-                {...this.state.heros[this.state.fourthHero]}
-              />
+              <Link to={fourthHeroUrl} style={{ textDecoration: 'none' }}>
+                <HeroCircle
+                  className="heroLine"
+                  {...this.state.heros[this.state.fourthHero]}
+                />
+              </Link>
             ) : (
               <p></p>
             )}
             {this.state.heros ? (
-              <HeroCircle
-                className="heroLine"
-                {...this.state.heros[this.state.fifthHero]}
-              />
+              <Link to={fifthHeroUrl} style={{ textDecoration: 'none' }}>
+                <HeroCircle
+                  className="heroLine"
+                  {...this.state.heros[this.state.fifthHero]}
+                />
+              </Link>
             ) : (
               <p></p>
             )}
@@ -149,7 +166,9 @@ class Home extends React.Component {
         <div className="heroLineUpSmallContainer" key={this.getId()}>
           <section>
             {this.state.heros ? (
+              <Link to={sixHeroUrl} style={{ textDecoration: 'none' }}>
               <HeroCircle {...this.state.heros[this.state.sixHero]} />
+              </Link>
             ) : (
               <p>loading</p>
             )}
