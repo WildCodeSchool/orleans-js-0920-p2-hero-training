@@ -160,7 +160,7 @@ body{
     background: var(--main-color);
     cursor: pointer;
     position: relative;
-    margin: 1px;
+    margin: 20px;
     z-index: 0;
     font-family: var(--main-font);
     border-radius: 10%;
