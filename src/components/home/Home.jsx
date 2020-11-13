@@ -100,8 +100,9 @@ class Home extends React.Component {
     let fifthHeroUrl = `/hero/${this.state.fifthHero}`;
     let sixHeroUrl = `/hero/${this.state.sixHero}`;
     return (
-      <div className="home">
+      <div>
         <Header />
+        <div className="home">
         <div className="primaryContainer" key={this.getId()}>
           <button className="glow-on-hover" onClick={this.decrementHero5}>
             {" "}
@@ -182,6 +183,7 @@ class Home extends React.Component {
               </button>
             </div>
           </section>
+        </div>
         </div>
       </div>
     );
