@@ -1,11 +1,14 @@
 import './Header.css';
 import logoSmall from '../../assets/logoSmall.png';
+import { Link } from 'react-router-dom';
 
 function Header() {
   return (
     <header>
       <div className="header">
+        <Link to="/">
         <img src={logoSmall} alt="logo" className="logoSmall" />
+        </Link>
         <h1>SUPERHEROS WORKOUT</h1>
       </div>
     </header>
@@ -13,3 +16,4 @@ function Header() {
 }
 
 export default Header;
+

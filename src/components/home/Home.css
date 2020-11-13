@@ -1,0 +1,266 @@
+@import "../../App.css";
+
+.loading{
+  margin-top:500px;
+  
+}
+body{
+  background-image: url("https://zupimages.net/up/20/45/mgli.jpg");
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.glow-on-hover {
+  width: 110px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: azure;
+  background: var(--main-color);
+  cursor: pointer;
+  position: relative;
+  margin: 10px;
+  z-index: 0;
+  font-family: var(--main-font);
+  border-radius: 10%;
+  font-size: 20px;
+}
+
+.glow-on-hover:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover:active {
+  color: #000;
+}
+
+.glow-on-hover:active:after {
+  background: transparent;
+}
+
+.glow-on-hover:hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.mainHero img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 5px solid var(--main-color);
+  margin: 0px 5px;
+  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+    0 15px 40px rgba(166, 173, 201, 0.5);
+}
+.mainHero img:hover {
+  
+  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+    0 15px 40px rgba(166, 173, 201, 1);
+}
+
+.mainHero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 56px;
+  cursor: pointer;
+  
+}
+.mainHero h3 {
+  font-size: 28px;
+  color: azure;
+  --color1: rgb(0, 255, 255);
+  --color2: rgb(46, 16, 16);
+  --color3: dodgerblue;
+  --color4: blue;
+  --interval: 1s;
+  text-shadow: 0 0 5px var(--color1), 0 0 5px var(--color2),
+    0 0 5px var(--color3), 0 0 5px var(--color4);
+  will-change: filter, color;
+  filter: saturate(60%);
+  animation: flicker steps(100) var(--interval) 1s infinite;
+}
+.heroLineUpSmallContainer {
+  height: 100vh;
+}
+.heroLineUpSmallContainer section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.primaryContainer {
+  display: none;
+}
+.buttonMobile {
+  width: 20%;
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .mainHero {
+    margin: 28px 100px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: azure;
+    background: var(--main-color);
+    cursor: pointer;
+    position: relative;
+    margin: 1px;
+    z-index: 0;
+    font-family: var(--main-font);
+    border-radius: 10%;
+    font-size: 20px;
+  }
+  .primaryContainer {
+    display: flex;
+    align-items: center;
+    padding-bottom: 3.35%;
+    justify-content: space-between;
+
+  }
+
+  .heroLineUpContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .heroLineUpSmallContainer {
+    display: none;
+  }
+  .mainHero {
+    margin: 0px 0px;
+    margin-top: 56px;
+  }
+  .buttonDesktop {
+    display: flex;
+    width: 10%;
+  }
+  .buttonContainer {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .mainHero {
+    margin: 28px 20px;
+  }
+  .buttonContainer {
+    display: none;
+  }
+}
+@media screen and (min-width: 1650px) {
+  .mainHero {
+    margin: 28px 100px;
+  }
+  .buttonContainer {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .mainHero {
+    margin: 28px 100px;
+  }
+  .buttonContainer {
+    display: none;
+  }
+
+  .heroLineUpContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+.rotateOut {
+  -webkit-animation-name: rotateOut;
+  animation-name: rotateOut;
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes rotateOut {
+  0% {
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 0;
+  }
+  100% {
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  -webkit-transform: rotate3d(0, 0, 1, 360deg);
+  transform: rotate3d(0, 0, 1, 360deg);
+  opacity: 1;
+  }
+  }
+  @keyframes rotateOut {
+  0% {
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  opacity: 0;
+  }
+  100% {
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  -webkit-transform: rotate3d(0, 0, 1, 360deg);
+  transform: rotate3d(0, 0, 1, 360deg);
+  opacity: 1;
+  }
+  } 
+
