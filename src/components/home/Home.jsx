@@ -103,87 +103,87 @@ class Home extends React.Component {
       <div>
         <Header />
         <div className="home">
-        <div className="primaryContainer" key={this.getId()}>
-          <button className="glow-on-hover" onClick={this.decrementHero5}>
-            {" "}
-            Previous{" "}
-          </button>
-          <div className="heroLineUpContainer">
-            {this.state.heros ? (
-              <Link to={firstHeroUrl} style={{ textDecoration: 'none' }}>
-                <HeroCircle
-                  className="heroLine"
-                  {...this.state.heros[this.state.firstHero]}
-                />
-              </Link>
-            ) : (
-              <CircularProgress className="loading" />
-            )}
-            {this.state.heros ? (
-              <Link to={secondeHeroUrl} style={{ textDecoration: 'none' }}>
-                <HeroCircle
-                  className="heroLine"
-                  {...this.state.heros[this.state.secondHero]}
-                />
-              </Link>
-            ) : (
-              <p></p>
-            )}
-            {this.state.heros ? (
-              <Link to={thirdHeroUrl} style={{ textDecoration: 'none' }}>
-                <HeroCircle
-                  className="heroLine"
-                  {...this.state.heros[this.state.thirdHero]}
-                />
-              </Link>
-            ) : (
-              <p></p>
-            )}
-            {this.state.heros ? (
-              <Link to={fourthHeroUrl} style={{ textDecoration: 'none' }}>
-                <HeroCircle
-                  className="heroLine"
-                  {...this.state.heros[this.state.fourthHero]}
-                />
-              </Link>
-            ) : (
-              <p></p>
-            )}
-            {this.state.heros ? (
-              <Link to={fifthHeroUrl} style={{ textDecoration: 'none' }}>
-                <HeroCircle
-                  className="heroLine"
-                  {...this.state.heros[this.state.fifthHero]}
-                />
-              </Link>
-            ) : (
-              <p></p>
-            )}
-          </div>
-          <button className="glow-on-hover" onClick={this.incrementHero5}>
-            Next
-          </button>
-        </div>
-        <div className="heroLineUpSmallContainer" key={this.getId()}>
-          <section>
-            {this.state.heros ? (
-              <Link to={sixHeroUrl} style={{ textDecoration: 'none' }}>
-              <HeroCircle {...this.state.heros[this.state.sixHero]} />
-              </Link>
-            ) : (
-              <CircularProgress className="mainHero" />
-            )}
-            <div className="smallButtonContainer">
-              <button className="glow-on-hover" onClick={this.decrementHero1}>
-                Previous
-              </button>
-
-              <button className="glow-on-hover" onClick={this.incrementHero1}>
-                Next
-              </button>
+          <div className="primaryContainer" key={this.getId()}>
+            <button className="glow-on-hover" onClick={this.decrementHero5}>
+              {" "}
+              Previous{" "}
+            </button>
+            <div className="heroLineUpContainer">
+              {this.state.heros ? (
+                <Link to={firstHeroUrl} style={{ textDecoration: "none" }}>
+                  <HeroCircle
+                    className="heroLine"
+                    {...this.state.heros[this.state.firstHero]}
+                  />
+                </Link>
+              ) : (
+                <CircularProgress className="loading" />
+              )}
+              {this.state.heros ? (
+                <Link to={secondeHeroUrl} style={{ textDecoration: "none" }}>
+                  <HeroCircle
+                    className="heroLine"
+                    {...this.state.heros[this.state.secondHero]}
+                  />
+                </Link>
+              ) : (
+                <p></p>
+              )}
+              {this.state.heros ? (
+                <Link to={thirdHeroUrl} style={{ textDecoration: "none" }}>
+                  <HeroCircle
+                    className="heroLine"
+                    {...this.state.heros[this.state.thirdHero]}
+                  />
+                </Link>
+              ) : (
+                <p></p>
+              )}
+              {this.state.heros ? (
+                <Link to={fourthHeroUrl} style={{ textDecoration: "none" }}>
+                  <HeroCircle
+                    className="heroLine"
+                    {...this.state.heros[this.state.fourthHero]}
+                  />
+                </Link>
+              ) : (
+                <p></p>
+              )}
+              {this.state.heros ? (
+                <Link to={fifthHeroUrl} style={{ textDecoration: "none" }}>
+                  <HeroCircle
+                    className="heroLine"
+                    {...this.state.heros[this.state.fifthHero]}
+                  />
+                </Link>
+              ) : (
+                <p></p>
+              )}
             </div>
-          </section>
-        </div>
+            <button className="glow-on-hover" onClick={this.incrementHero5}>
+              Next
+            </button>
+          </div>
+          <div className="heroLineUpSmallContainer" key={this.getId()}>
+            <section>
+              {this.state.heros ? (
+                <Link to={sixHeroUrl} style={{ textDecoration: "none" }}>
+                  <HeroCircle {...this.state.heros[this.state.sixHero]} />
+                </Link>
+              ) : (
+                <CircularProgress className="mainHero" />
+              )}
+              <div className="smallButtonContainer">
+                <button className="glow-on-hover" onClick={this.decrementHero1}>
+                  Previous
+                </button>
+
+                <button className="glow-on-hover" onClick={this.incrementHero1}>
+                  Next
+                </button>
+              </div>
+            </section>
+          </div>
         </div>
       </div>
     );
