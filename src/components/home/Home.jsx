@@ -7,7 +7,7 @@ import shortid from "shortid";
 
 function HeroCircle({ image, name }) {
   return (
-    <div className="mainHero ">
+    <div className="mainHero">
       <img src={image} alt={name} className="rotateOut " />
       <div>
         <h3>{name}</h3>
@@ -171,7 +171,7 @@ class Home extends React.Component {
               <HeroCircle {...this.state.heros[this.state.sixHero]} />
               </Link>
             ) : (
-              <p>loading</p>
+              <CircularProgress className="mainHero" />
             )}
             <div className="smallButtonContainer">
               <button className="glow-on-hover" onClick={this.decrementHero1}>
