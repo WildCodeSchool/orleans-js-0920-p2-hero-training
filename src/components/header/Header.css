@@ -1,5 +1,8 @@
 @import '../../App.css';
 
+header {
+  z-index: 100;
+}
 .header {
     display: flex;
     justify-content: space-around;
@@ -9,7 +12,6 @@
     top:0;
     padding: var(--spacing-medium);
     background-image: url('https://www.transparenttextures.com/patterns/diagmonds.png');
-    
   }
   
   h1 {
