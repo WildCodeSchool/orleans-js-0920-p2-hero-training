@@ -10,7 +10,7 @@ header {
   background-color: var(--secondary-color);
   border-bottom: 1px solid black;
   top: 0;
-  padding: var(--spacing-medium);
+  padding: 4px var(--spacing-medium);
   background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
 }
 h1 {
