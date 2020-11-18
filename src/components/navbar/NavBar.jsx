@@ -1,7 +1,9 @@
 import './NavBar.css';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
+import { BrowserRouter as Router, } from 'react-router-dom';
 
-function NavBar() {
+
+function NavBar(props) {
   return (
     <Router>
       <div className="navbar-container">
@@ -9,32 +11,26 @@ function NavBar() {
           <ul>
             <li>
               {' '}
-              <Link to="/stats" className="nav-link">
+              <Link to="/hero#stats" className="nav-link">
                 STATS
               </Link>
             </li>
             <li className="nav-link">|</li>
             <li>
-              <Link to="/program" className="nav-link">
+              <Link to="/hero#program" className="nav-link">
                 PROGRAM
               </Link>
             </li>
 
             <li className="nav-link">|</li>
             <li>
-              <Link to="/food" className="nav-link">
+              <Link to="/hero#food" className="nav-link">
                 FOOD
               </Link>
             </li>
           </ul>
         </nav>
-        <Switch>
-          <Route exact path="/stats">
-            {/* <Stats /> */}
-          </Route>
-          <Route path="/program">{/* <Program /> */}</Route>
-          <Route path="/food">{/* <Food /> */}</Route>
-        </Switch>
+        
       </div>
     </Router>
   );
