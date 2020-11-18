@@ -1,64 +1,57 @@
-@import '../../App.css';
+@import "../../App.css";
 
 header {
   z-index: 5;
 }
 .header {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: var(--secondary-color);
-    border-bottom: 1px solid black;
-    top:0;
-    padding: var(--spacing-medium);
-    background-image: url('https://www.transparenttextures.com/patterns/diagmonds.png');
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--secondary-color);
+  border-bottom: 1px solid black;
+  top: 0;
+  padding: var(--spacing-medium);
+  background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
+}
+h1 {
+  font-family: var(--main-font);
+  font-size: 28px;
+  color: #8d99ae;
+  text-align: center;
+  padding: var(--spacing);
+  letter-spacing: 4px;
+  color: azure;
+  --color1: rgb(0, 255, 255);
+  --color2: rgb(46, 16, 16);
+  --color3: dodgerblue;
+  --color4: blue;
+  --interval: 1s;
+  text-shadow: 0 0 5px var(--color1), 0 0 5px var(--color2),
+    0 0 5px var(--color3), 0 0 5px var(--color4);
+  will-change: filter, color;
+  filter: saturate(60%);
+  animation: flicker steps(100) var(--interval) 1s infinite;
+}
+@media screen and (min-width: 481px) and (max-width: 1023px) {
+  .header {
+    justify-content: flex-start;
   }
-  
+  .logo_small {
+    padding-left: 5px;
+  }
   h1 {
-    font-family: var(--main-font);
-    font-size: 28px;
-    color: #8d99ae;
-    text-align: center;
-    padding: var(--spacing);
-    letter-spacing: 4px;
-    color: azure;
-    --color1: rgb(0, 255, 255);
-    --color2: rgb(46, 16, 16);
-    --color3: dodgerblue;
-    --color4: blue;
-    --interval: 1s;
-    text-shadow: 
-      0 0 5px var(--color1),
-      0 0 5px var(--color2),
-      0 0 5px var(--color3),
-      0 0 5px var(--color4);
-    will-change: filter, color;
-    filter: saturate(60%);
-    animation: flicker steps(100) var(--interval) 1s infinite;
+    flex: 2;
   }
-
-  @media screen and (min-width: 481px) and (max-width: 1023px) {
-    .header {
-      justify-content: flex-start;
-    }
-  
-    .logo_small {
-      padding-left: 5px;
-    }
-    h1 {
-      flex: 2;
-    }
+}
+@media screen and (min-width: 1024px) {
+  .header {
+    justify-content: flex-start;
   }
-  
-  @media screen and (min-width: 1024px) {
-    .header {
-      justify-content: flex-start;
-    }
-    h1 {
-      flex: 2;
-      font-size: 50px;
-    }
-    .logo_small {
-      padding: 0px var(--spacing-large);
-    }
+  h1 {
+    flex: 2;
+    font-size: 50px;
   }
+  .logo_small {
+    padding: 0px var(--spacing-large);
+  }
+}
