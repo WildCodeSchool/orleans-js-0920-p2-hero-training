@@ -1,7 +1,7 @@
 @import '../../App.css';
 
 header {
-  z-index: 100;
+  z-index: 5;
 }
 .header {
     display: flex;
