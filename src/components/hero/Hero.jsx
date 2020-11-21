@@ -5,7 +5,8 @@ import NavBar from "../navbar/NavBar";
 import "./Hero.css";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import axios from "axios";
-import test from "../../assets/test.png";
+import runlogo from "../../assets/runlogo.png";
+import {Slide} from 'react-reveal';
 
 function Hero(props) {
   const [params] = useState(props.match.params);
@@ -131,52 +132,55 @@ function Hero(props) {
         ) : (
           <p></p>
         )}
-        <div className="subContainer" id="program">
-          <h4>{result.name}</h4>
-
-          <div className="liContainer">
-            <li>{result.session1}</li>
-            <li>{result.session2} </li>
-            <li>{result.session3} </li>
-            <li>{result.session4} </li>
-            <li>{result.session5} </li>
-            <li>{result.session6}</li>
-            <li>{result.session7}</li>
-            <li>{result.session8}</li>
-            <li>{result.session9}</li>
-          </div>
-          <div className="difficultyLevels">
-            <h6>Difficulty Level </h6>
-            <div className="difficultyLevelsSmallContainer">
-              <li>Easy :{result.level1} </li>
-              <li>Medium : {result.level2} </li>
-              <li>Hard :{result.level3}</li>
+        <Slide right duration={500}>
+          <div className="subContainer" id="program">
+            <h4>{result.name}</h4>
+            <div className="liContainer">
+              <li>{result.session1}</li>
+              <li>{result.session2} </li>
+              <li>{result.session3} </li>
+              <li>{result.session4} </li>
+              <li>{result.session5} </li>
+              <li>{result.session6}</li>
+              <li>{result.session7}</li>
+              <li>{result.session8}</li>
+              <li>{result.session9}</li>
             </div>
-          </div>
-
-          <p>{result.info}</p>
-        </div>
-        <div className="subContainer lastContainer" id="food">
-          <h4>{result.name1}</h4>
-
-          <div className="liContainer">
-            <li>{result.food1}</li>
-            <li>{result.food2} </li>
-            <li>{result.food3} </li>
-            <li>{result.food4} </li>
-            <li>{result.food5} </li>
-            <li>{result.food6} </li>
-            <li>{result.food7} </li>
-            <li>{result.food8} </li>
-          </div>
-          <div className="difficultyLevels">
-            <h6>Advice</h6>
-            <div className="difficultyLevelsSmallContainer">
-              <p>{result.quotes}</p>
+            <div className="difficultyLevels">
+              <h6>Difficulty Level </h6>
+              <div className="difficultyLevelsSmallContainer">
+                <li>Easy : {result.level1} </li>
+                <li>Medium : {result.level2} </li>
+                <li>Hard :{result.level3}</li>
+              </div>
             </div>
+
+            <p>{result.info}</p>
           </div>
-          <img src={test} alt="" />
-        </div>
+        </Slide>
+        <Slide right duration duration={1000}>
+          <div className="subContainer lastContainer" id="food">
+            <h4>{result.name1}</h4>
+
+            <div className="liContainer">
+              <li>{result.food1}</li>
+              <li>{result.food2} </li>
+              <li>{result.food3} </li>
+              <li>{result.food4} </li>
+              <li>{result.food5} </li>
+              <li>{result.food6} </li>
+              <li>{result.food7} </li>
+              <li>{result.food8} </li>
+            </div>
+            <div className="difficultyLevels">
+              <h6>Advice</h6>
+              <div className="difficultyLevelsSmallContainer">
+                <p>{result.quotes}</p>
+              </div>
+            </div>
+            <img src={runlogo} className="runLogo" alt="run logo" />
+          </div>
+        </Slide>
         <NavBar />
       </div>
     </div>

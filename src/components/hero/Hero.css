@@ -133,7 +133,7 @@ p {
   color: azure;
 }
 .subContainer p {
-  padding: 0px var(--spacing);
+  padding: 0px 33px;
 }
 .difficultyLevels {
   display: flex;
@@ -191,6 +191,9 @@ p {
 }
 .lastContainer {
   margin-bottom: 75px;
+}
+.runLogo{
+  width: 50%;
 }
 .subContainer h4 {
   font-size: 36px;
