@@ -4,16 +4,19 @@
   background-image: url("../../assets/mgli.jpg");
   height: 100vh;
 }
+
 .loading {
   padding: 0;
   margin: 0;
 }
+
 .largeContainer {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
 }
+
 .bg-image {
   background-size: cover;
   position: fixed;
@@ -29,6 +32,7 @@
   -ms-filter: blur(5px);
   filter: blur(5px);
 }
+
 .heroName img {
   border-radius: 50%;
   width: 150px;
@@ -36,6 +40,7 @@
   border: 2px solid var(--main-color);
   margin: auto;
 }
+
 .heroName {
   display: flex;
   flex-direction: column;
@@ -43,9 +48,11 @@
   margin-top: var(--spacing-large);
   z-index: 5;
 }
+
 .heroName h3 {
   padding-top: var(--spacing-medium);
 }
+
 .heroCard {
   z-index: 5;
   display: flex;
@@ -53,6 +60,7 @@
   align-items: center;
   color: white;
 }
+
 .container h3 {
   margin-top: 0;
   margin-bottom: var(--spacing-medium);
@@ -70,10 +78,12 @@
   animation: flicker steps(100) var(--interval) 1s infinite;
   font-family: var(--main-font);
 }
+
 .containerList {
   display: flex;
   justify-content: space-between;
 }
+
 .containerLineOption,
 .containerLineResult {
   list-style: none;
@@ -81,23 +91,28 @@
   padding: 0;
   width: 100px;
 }
+
 .containerLineResult {
   padding-left: 2%;
 }
+
 .containerLineOption {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
+
 .containerLineOption li,
 .containerLineResult li {
   font-family: var(--main-font);
   font-size: 18px;
   color: azure;
 }
+
 .containerLineResult li {
   font-weight: bold;
 }
+
 .subContainer1 {
   text-align: center;
   background-color: var(--main-color);
@@ -106,6 +121,7 @@
   padding-bottom: var(--spacing-medium);
   width: 100vw;
 }
+
 .subContainer {
   background-color: var(--main-color);
   margin-top: var(--spacing-large);
@@ -116,6 +132,7 @@
   flex-direction: column;
   align-items: center;
 }
+
 .subContainer h3,
 .subContainer1 h3 {
   text-align: center;
@@ -123,6 +140,7 @@
   padding-top: var(--spacing-medium);
   font-family: var(--main-font);
 }
+
 .subContainer li,
 p {
   list-style: none;
@@ -132,14 +150,17 @@ p {
   font-size: 24px;
   color: azure;
 }
+
 .subContainer p {
   padding: 0px 33px;
 }
+
 .difficultyLevels {
   display: flex;
   flex-direction: column;
   text-align: center;
 }
+
 .difficultyLevels h6 {
   margin: 0;
   font-size: 28px;
@@ -157,12 +178,14 @@ p {
   padding: 24px;
   font-family: var(--main-font);
 }
+
 .difficultyLevelsSmallContainer p li {
   display: flex;
   flex-direction: column;
   padding: var(--spacing-medium);
   text-align: center;
 }
+
 .progressBar {
   display: flex;
   justify-content: center;
@@ -172,15 +195,18 @@ p {
 .containerBar progress {
   margin: 8px 0px;
 }
+
 .containerLabel label {
   margin: 4px 0px;
 }
+
 .containerBar {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding-left: 1%;
 }
+
 .containerLabel {
   display: flex;
   flex-direction: column;
@@ -189,12 +215,15 @@ p {
   font-size: 18px;
   font-weight: bold;
 }
+
 .lastContainer {
   margin-bottom: 75px;
 }
+
 .runLogo{
   width: 50%;
 }
+
 .subContainer h4 {
   font-size: 36px;
   color: azure;
@@ -211,6 +240,7 @@ p {
   margin: 0;
   padding: 16px;
 }
+
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .largeContainer {
     display: flex;
@@ -218,16 +248,20 @@ p {
     justify-content: center;
     align-items: center;
   }
+
   .liContainer li {
     font-size: 30px;
   }
+
 }
+
 @media screen and (min-width: 1024px) {
   .largeContainer {
     flex-direction: row;
     justify-content: space-around;
     align-items: stretch;
   }
+
   .heroName img {
     border-radius: 50%;
     width: 300px;
@@ -235,41 +269,52 @@ p {
     border: 2px solid var(--main-color);
     margin: auto;
   }
+
   .containerLineOption li,
   .containerLineResult li {
     font-size: 24px;
     color: azure;
   }
+
   .container h3 {
     font-size: 46px;
   }
+
   .subContainer1 {
     width: 100%;
     border-radius: 10%;
   }
+
   .subContainer {
     width: 30%;
     border-radius: 10%;
   }
+  
   .subContainer li {
     font-size: 28px;
   }
+
   .lastContainer {
     margin-bottom: 0;
   }
+
   .liContainer {
     margin-bottom: 32px;
   }
+
   .subContainer h4 {
     padding: 32px;
   }
+
   .lastContainer img {
     width: 50%;
   }
+
   .subContainer:hover {
     filter: blur(0px);
     transform: scale(1.02);
     box-shadow: 0 8px 20px 0px rgba(0, 0, 0, 0.125);
     transition: 0.5s linear;
   }
+  
 }

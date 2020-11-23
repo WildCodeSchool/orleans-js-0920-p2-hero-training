@@ -96,7 +96,7 @@ function Hero(props) {
               <div className="progressBar">
                 <div className="containerLabel">
                   <label for="speed">Speed : </label>
-                  <label for="force">Force : </label>
+                  <label for="strength">strength : </label>
                   <label for="stamina">Stamina : </label>
                 </div>
 
@@ -110,7 +110,7 @@ function Hero(props) {
                     {getHeros[params.id].speed}{" "}
                   </progress>
                   <progress
-                    id="force"
+                    id="strength"
                     max="100"
                     value={getHeros[params.id].force}
                   >
