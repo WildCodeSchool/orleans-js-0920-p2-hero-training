@@ -1,14 +1,14 @@
 @import "../../App.css";
 
-.loading{
-  margin-top:500px;
-  
+.loading {
+  margin-top: 500px;
 }
-body{
+.home {
   background-image: url("https://zupimages.net/up/20/45/mgli.jpg");
   -webkit-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
+  padding: 0.5%;
 }
 
 .glow-on-hover {
@@ -101,7 +101,6 @@ body{
     0 15px 40px rgba(166, 173, 201, 0.5);
 }
 .mainHero img:hover {
-  
   box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
     0 15px 40px rgba(166, 173, 201, 1);
 }
@@ -113,7 +112,6 @@ body{
   align-items: center;
   margin-top: 56px;
   cursor: pointer;
-  
 }
 .mainHero h3 {
   font-size: 28px;
@@ -169,9 +167,8 @@ body{
   .primaryContainer {
     display: flex;
     align-items: center;
-    padding-bottom: 3.35%;
+    padding: 3.35%;
     justify-content: space-between;
-
   }
 
   .heroLineUpContainer {
@@ -237,30 +234,29 @@ body{
 }
 @-webkit-keyframes rotateOut {
   0% {
-  -webkit-transform-origin: center;
-  transform-origin: center;
-  opacity: 0;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    opacity: 0;
   }
   100% {
-  -webkit-transform-origin: center;
-  transform-origin: center;
-  -webkit-transform: rotate3d(0, 0, 1, 360deg);
-  transform: rotate3d(0, 0, 1, 360deg);
-  opacity: 1;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: rotate3d(0, 0, 1, 360deg);
+    transform: rotate3d(0, 0, 1, 360deg);
+    opacity: 1;
   }
-  }
-  @keyframes rotateOut {
+}
+@keyframes rotateOut {
   0% {
-  -webkit-transform-origin: center;
-  transform-origin: center;
-  opacity: 0;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    opacity: 0;
   }
   100% {
-  -webkit-transform-origin: center;
-  transform-origin: center;
-  -webkit-transform: rotate3d(0, 0, 1, 360deg);
-  transform: rotate3d(0, 0, 1, 360deg);
-  opacity: 1;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: rotate3d(0, 0, 1, 360deg);
+    transform: rotate3d(0, 0, 1, 360deg);
+    opacity: 1;
   }
-  } 
-
+}
