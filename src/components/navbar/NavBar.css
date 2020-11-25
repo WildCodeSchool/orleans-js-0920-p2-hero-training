@@ -3,12 +3,14 @@
 ul {
   display: flex;
   list-style: none;
+  margin-bottom: 8px;
+  margin-top: 20px;
   padding: 0;
   width: 100vw;
   justify-content: center;
 }
 .nav-link {
-  padding: 0% 3%;
+  padding: 0% 2%;
   text-decoration: none;
   color: azure;
   --color1: rgb(0, 255, 255);
@@ -22,14 +24,14 @@ ul {
   filter: saturate(60%);
   animation: flicker steps(100) var(--interval) 1s infinite;
   font-family: var(--main-font);
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
 }
 .navbar-container {
   position: fixed;
   bottom: 0;
-  background-color: var(--main-color);
-  border-radius: 80% 80% 0% 0%;
+  background-color: rgba(0,0,0,1);
+  border-radius: 70% 70% 0% 0%;
   z-index: 6;
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
