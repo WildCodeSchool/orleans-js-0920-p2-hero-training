@@ -9,7 +9,7 @@ function Header() {
         <Link to="/">
         <img src={logoSmall} alt="logo" className="logoSmall" />
         </Link>
-        <h1>SUPERHEROS WORKOUT</h1>
+        <h1>SUPERHERO WORKOUT</h1>
       </div>
     </header>
   );
