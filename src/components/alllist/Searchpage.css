@@ -91,6 +91,7 @@
   border: 1px solid var(--secondary-color-font);
   border-radius: 4px;
   padding: var(--spacing);
+  color:azure;
 }
 
 .searchContainer p:hover {

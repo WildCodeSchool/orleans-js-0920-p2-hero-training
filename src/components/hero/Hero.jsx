@@ -7,6 +7,7 @@ import axios from "axios";
 import runlogo from "../../assets/runlogo.png";
 import shiel from '../../assets/shiel.png';
 
+
 function Hero(props) {
   const [params] = useState(props.match.params);
   const [getHeros, setHeros] = useState([]);
@@ -136,7 +137,6 @@ function Hero(props) {
           ) : (
             <p></p>
           )}
-
           <div className="subContainer" id="program">
             <h4>{result.name}</h4>
             <div className="liContainer">
@@ -161,7 +161,6 @@ function Hero(props) {
 
             <p>{result.info}</p>
           </div>
-
           <div className="subContainer lastContainer" id="food">
             <h4>{result.name1}</h4>
 
@@ -175,7 +174,7 @@ function Hero(props) {
               <li>{result.food7} </li>
               <li>{result.food8} </li>
             </div>
-            <div className="difficultyLevels">
+            <div className="adviceContainer">
               <h6>Advice</h6>
               <div className="difficultyLevelsSmallContainer">
                 <p>{result.quotes}</p>
