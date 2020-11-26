@@ -82,20 +82,16 @@ class Home extends React.Component {
   };
   incrementHero1 = () => {
     const sixHero = this.state.sixHero;
-    const page = this.state.page;
 
     if (sixHero <= 28) {
       this.setState({ sixHero: sixHero + 1 });
-      this.setState({ page: page + 1 });
     }
   };
   decrementHero1 = () => {
     const sixHero = this.state.sixHero;
-    const page = this.state.page;
 
     if (sixHero >= 1) {
       this.setState({ sixHero: sixHero - 1 });
-      this.setState({ page: page - 1 });
     }
   };
   getId = () => {
