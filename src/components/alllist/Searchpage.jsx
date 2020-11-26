@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Header from "../header/Header";
-import CircularProgress from "@material-ui/core/CircularProgress";
+import shiel from '../../assets/shiel.png';
 import "./Searchpage.css";
 import { Link } from "react-router-dom";
 
@@ -24,7 +24,10 @@ function Searchpage() {
   if (isLoadingHero) {
     return (
       <div className="loadingPage">
-        <CircularProgress className="loading" />
+        <div className="loadingContainer">
+          <img src={shiel} alt="" className="rotating"/>
+          <p>Loading</p>
+        </div>
       </div>
     );
   }

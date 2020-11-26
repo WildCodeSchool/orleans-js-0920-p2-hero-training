@@ -3,12 +3,35 @@
 .loadingPage {
   background-image: url("../../assets/mgli.jpg");
   height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  
+}
+.loadingContainer{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
-.loading {
-  padding: 0;
-  margin: 0;
+
+@keyframes rotating {
+  from{
+      -webkit-transform: rotate(0deg);
+  }
+  to{
+      -webkit-transform: rotate(360deg);
+  }
 }
+
+.rotating {
+  animation: rotating 2s linear infinite;
+  width: 60px;
+}
+
+
 
 .container {
   height: 100vh;
