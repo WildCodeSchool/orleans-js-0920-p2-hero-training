@@ -55,6 +55,7 @@ function Hero(props) {
   } else {
     result = "none";
   }
+  
   return (
     <div>
       <div className="container" >

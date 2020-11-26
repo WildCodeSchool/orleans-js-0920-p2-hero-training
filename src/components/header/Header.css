@@ -31,15 +31,20 @@ h1 {
   filter: saturate(60%);
   animation: flicker steps(100) var(--interval) 1s infinite;
 }
+
+.searchIcons {
+  display: none;
+}
+
 @media screen and (min-width: 481px) and (max-width: 1023px) {
   .header {
     justify-content: flex-start;
   }
-  .logo_small {
-    padding-left: 5px;
-  }
   h1 {
     flex: 2;
+  }
+  .searchIcons {
+    display: flex;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -50,7 +55,7 @@ h1 {
     flex: 2;
     font-size: 50px;
   }
-  .logo_small {
-    padding: 0px var(--spacing-large);
+  .searchIcons {
+    display: flex;
   }
 }

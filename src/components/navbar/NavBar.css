@@ -9,6 +9,7 @@ ul {
   width: 100vw;
   justify-content: center;
 }
+
 .nav-link {
   padding: 0% 2%;
   text-decoration: none;
@@ -27,18 +28,21 @@ ul {
   font-size: 18px;
   font-weight: bold;
 }
+
 .navbar-container {
   position: fixed;
   bottom: 0;
-  background-color: rgba(0,0,0,1);
+  background-color: rgba(0, 0, 0, 1);
   border-radius: 70% 70% 0% 0%;
   z-index: 6;
 }
+
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .nav-link {
     font-size: 28px;
   }
 }
+
 @media screen and (min-width: 1024px) {
   .navbar-container {
     display: none;
