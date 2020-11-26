@@ -62,7 +62,7 @@ function Searchpage() {
             Stamina Heroes
           </option>
           <option value="strenght" onClick={handleshowStrenght}>
-            Strenght Heroes
+            Strength Heroes
           </option>
         </select>
       </div>
@@ -76,7 +76,7 @@ function Searchpage() {
                 <div className="progressBar">
                   <div className="containerLabel">
                     <label for="speed">Speed : </label>
-                    <label for="strenght">Force : </label>
+                    <label for="strenght">Strength : </label>
                     <label for="stamina">Stamina : </label>
                   </div>
 
@@ -118,7 +118,7 @@ function Searchpage() {
                 <div className="progressBar">
                   <div className="containerLabel">
                     <label for="speed">Speed : </label>
-                    <label for="strenght">Force : </label>
+                    <label for="strenght">Strength : </label>
                     <label for="stamina">Stamina : </label>
                   </div>
 
