@@ -4,6 +4,7 @@ import Header from "../header/Header.jsx";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { Link } from "react-router-dom";
 import shortid from "shortid";
+import { AiOutlineFileSearch } from "react-icons/ai";
 
 function HeroCircle({ image, name }) {
   return (
@@ -27,6 +28,7 @@ class Home extends React.Component {
       fourthHero: 3,
       fifthHero: 4,
       sixHero: 0,
+      page: 1,
     };
     this.incrementHero = this.incrementHero5.bind(this);
     this.decrementHero = this.decrementHero5.bind(this);
@@ -50,6 +52,7 @@ class Home extends React.Component {
     const thirdHero = this.state.thirdHero;
     const fourthHero = this.state.fourthHero;
     const fifthHero = this.state.fifthHero;
+    const page = this.state.page;
 
     if (fifthHero <= 24) {
       this.setState({ firstHero: firstHero + 5 });
@@ -57,6 +60,7 @@ class Home extends React.Component {
       this.setState({ thirdHero: thirdHero + 5 });
       this.setState({ fourthHero: fourthHero + 5 });
       this.setState({ fifthHero: fifthHero + 5 });
+      this.setState({ page: page + 1 });
     }
   };
   decrementHero5 = () => {
@@ -65,6 +69,7 @@ class Home extends React.Component {
     const thirdHero = this.state.thirdHero;
     const fourthHero = this.state.fourthHero;
     const fifthHero = this.state.fifthHero;
+    const page = this.state.page;
 
     if (fifthHero > 4) {
       this.setState({ firstHero: firstHero - 5 });
@@ -72,19 +77,25 @@ class Home extends React.Component {
       this.setState({ thirdHero: thirdHero - 5 });
       this.setState({ fourthHero: fourthHero - 5 });
       this.setState({ fifthHero: fifthHero - 5 });
+      this.setState({ page: page - 1 });
     }
   };
   incrementHero1 = () => {
     const sixHero = this.state.sixHero;
+    const page = this.state.page;
 
     if (sixHero <= 28) {
       this.setState({ sixHero: sixHero + 1 });
+      this.setState({ page: page + 1 });
     }
   };
   decrementHero1 = () => {
     const sixHero = this.state.sixHero;
+    const page = this.state.page;
+
     if (sixHero >= 1) {
       this.setState({ sixHero: sixHero - 1 });
+      this.setState({ page: page - 1 });
     }
   };
   getId = () => {
@@ -103,66 +114,71 @@ class Home extends React.Component {
       <div>
         <Header />
         <div className="home">
-          <div className="primaryContainer" key={this.getId()}>
-            <button className="glow-on-hover" onClick={this.decrementHero5}>
-              {" "}
-              Previous{" "}
-            </button>
-            <div className="heroLineUpContainer">
-              {this.state.heros ? (
-                <Link to={firstHeroUrl} style={{ textDecoration: "none" }}>
-                  <HeroCircle
-                    className="heroLine"
-                    {...this.state.heros[this.state.firstHero]}
-                  />
-                </Link>
-              ) : (
-                <CircularProgress className="loading" />
-              )}
-              {this.state.heros ? (
-                <Link to={secondeHeroUrl} style={{ textDecoration: "none" }}>
-                  <HeroCircle
-                    className="heroLine"
-                    {...this.state.heros[this.state.secondHero]}
-                  />
-                </Link>
-              ) : (
-                <p></p>
-              )}
-              {this.state.heros ? (
-                <Link to={thirdHeroUrl} style={{ textDecoration: "none" }}>
-                  <HeroCircle
-                    className="heroLine"
-                    {...this.state.heros[this.state.thirdHero]}
-                  />
-                </Link>
-              ) : (
-                <p></p>
-              )}
-              {this.state.heros ? (
-                <Link to={fourthHeroUrl} style={{ textDecoration: "none" }}>
-                  <HeroCircle
-                    className="heroLine"
-                    {...this.state.heros[this.state.fourthHero]}
-                  />
-                </Link>
-              ) : (
-                <p></p>
-              )}
-              {this.state.heros ? (
-                <Link to={fifthHeroUrl} style={{ textDecoration: "none" }}>
-                  <HeroCircle
-                    className="heroLine"
-                    {...this.state.heros[this.state.fifthHero]}
-                  />
-                </Link>
-              ) : (
-                <p></p>
-              )}
+          <div>
+            <div className="primaryContainer" key={this.getId()}>
+              <button className="glow-on-hover" onClick={this.decrementHero5}>
+                {" "}
+                Previous{" "}
+              </button>
+              <div className="heroLineUpContainer">
+                {this.state.heros ? (
+                  <Link to={firstHeroUrl} style={{ textDecoration: "none" }}>
+                    <HeroCircle
+                      className="heroLine"
+                      {...this.state.heros[this.state.firstHero]}
+                    />
+                  </Link>
+                ) : (
+                  <CircularProgress className="loading" />
+                )}
+                {this.state.heros ? (
+                  <Link to={secondeHeroUrl} style={{ textDecoration: "none" }}>
+                    <HeroCircle
+                      className="heroLine"
+                      {...this.state.heros[this.state.secondHero]}
+                    />
+                  </Link>
+                ) : (
+                  <p></p>
+                )}
+                {this.state.heros ? (
+                  <Link to={thirdHeroUrl} style={{ textDecoration: "none" }}>
+                    <HeroCircle
+                      className="heroLine"
+                      {...this.state.heros[this.state.thirdHero]}
+                    />
+                  </Link>
+                ) : (
+                  <p></p>
+                )}
+                {this.state.heros ? (
+                  <Link to={fourthHeroUrl} style={{ textDecoration: "none" }}>
+                    <HeroCircle
+                      className="heroLine"
+                      {...this.state.heros[this.state.fourthHero]}
+                    />
+                  </Link>
+                ) : (
+                  <p></p>
+                )}
+                {this.state.heros ? (
+                  <Link to={fifthHeroUrl} style={{ textDecoration: "none" }}>
+                    <HeroCircle
+                      className="heroLine"
+                      {...this.state.heros[this.state.fifthHero]}
+                    />
+                  </Link>
+                ) : (
+                  <p></p>
+                )}
+              </div>
+              <button className="glow-on-hover" onClick={this.incrementHero5}>
+                Next
+              </button>
             </div>
-            <button className="glow-on-hover" onClick={this.incrementHero5}>
-              Next
-            </button>
+            <div className="pagination">
+              <p> Page {this.state.page} on 6</p>
+            </div>
           </div>
           <div className="heroLineUpSmallContainer" key={this.getId()}>
             <section>
@@ -182,6 +198,12 @@ class Home extends React.Component {
                   Next
                 </button>
               </div>
+              <Link to="/list" style={{ textDecoration: "none" }}>
+                <button className="btnList">
+                  <AiOutlineFileSearch className="" size={30} color={"white"} />{" "}
+                  All heroes
+                </button>
+              </Link>
             </section>
           </div>
         </div>

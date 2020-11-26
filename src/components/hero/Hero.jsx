@@ -6,7 +6,6 @@ import "./Hero.css";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import axios from "axios";
 import runlogo from "../../assets/runlogo.png";
-import {Slide} from 'react-reveal';
 
 function Hero(props) {
   const [params] = useState(props.match.params);
@@ -56,83 +55,85 @@ function Hero(props) {
   } else {
     result = "none";
   }
+  
   return (
-    <div className="container">
-      <Header />
-      <div
-        style={getHeros[params.id] ? backGround : "red"}
-        className="bg-image"
-      >
-        {" "}
-      </div>
-      <div className="largeContainer">
-        {getHeros[params.id] !== undefined ? (
-          <div className="heroCard" id="stats">
-            <div className="heroName">
-              <img
-                src={getHeros[params.id].image}
-                alt={getHeros[params.id].name}
-              />
-              <h3>{getHeros[params.id].name}</h3>
-              <div className="containerList">
-                <div className="containerLineOption">
-                  <li>Gender :</li>
-                  <li>Race :</li>
-                  <li>Height :</li>
-                  <li>Weight :</li>
+    <div>
+      <div className="container" >
+        <Header />
+        <div
+          style={getHeros[params.id] ? backGround : "red"}
+          className="bg-image"
+        >
+          {" "}
+        </div>
+        <div className="largeContainer">
+          {getHeros[params.id] !== undefined ? (
+            <div className="heroCard" id="stats">
+              <div className="heroName">
+                <img
+                  src={getHeros[params.id].image}
+                  alt={getHeros[params.id].name}
+                />
+                <h3>{getHeros[params.id].name}</h3>
+                <div className="containerList">
+                  <div className="containerLineOption">
+                    <li>Gender :</li>
+                    <li>Race :</li>
+                    <li>Height :</li>
+                    <li>Weight :</li>
+                  </div>
+                  <div className="containerLineResult">
+                    <li>{getHeros[params.id].gender}</li>
+                    <li>{getHeros[params.id].race}</li>
+                    <li>{getHeros[params.id].height} </li>
+                    <li>{getHeros[params.id].weight}</li>
+                  </div>
                 </div>
-                <div className="containerLineResult">
-                  <li>{getHeros[params.id].gender}</li>
-                  <li>{getHeros[params.id].race}</li>
-                  <li>{getHeros[params.id].height} </li>
-                  <li>{getHeros[params.id].weight}</li>
+              </div>
+
+              <div className="subContainer1">
+                <h3>Stats</h3>
+
+                <div className="progressBar">
+                  <div className="containerLabel">
+                    <label for="speed">Speed : </label>
+                    <label for="strength">Strength : </label>
+                    <label for="stamina">Stamina : </label>
+                  </div>
+
+                  <div className="containerBar">
+                    <progress
+                      id="speed"
+                      max="100"
+                      value={getHeros[params.id].speed}
+                    >
+                      {" "}
+                      {getHeros[params.id].speed}{" "}
+                    </progress>
+                    <progress
+                      id="strength"
+                      max="100"
+                      value={getHeros[params.id].force}
+                    >
+                      {" "}
+                      {getHeros[params.id].force}%{" "}
+                    </progress>
+                    <progress
+                      id="stamina"
+                      max="100"
+                      value={getHeros[params.id].stamina}
+                    >
+                      {" "}
+                      {getHeros[params.id].stamina}{" "}
+                    </progress>
+                  </div>
                 </div>
               </div>
             </div>
+          ) : (
+            <p></p>
+          )}
 
-            <div className="subContainer1">
-              <h3>Stats</h3>
-
-              <div className="progressBar">
-                <div className="containerLabel">
-                  <label for="speed">Speed : </label>
-                  <label for="strength">strength : </label>
-                  <label for="stamina">Stamina : </label>
-                </div>
-
-                <div className="containerBar">
-                  <progress
-                    id="speed"
-                    max="100"
-                    value={getHeros[params.id].speed}
-                  >
-                    {" "}
-                    {getHeros[params.id].speed}{" "}
-                  </progress>
-                  <progress
-                    id="strength"
-                    max="100"
-                    value={getHeros[params.id].force}
-                  >
-                    {" "}
-                    {getHeros[params.id].force}%{" "}
-                  </progress>
-                  <progress
-                    id="stamina"
-                    max="100"
-                    value={getHeros[params.id].stamina}
-                  >
-                    {" "}
-                    {getHeros[params.id].stamina}{" "}
-                  </progress>
-                </div>
-              </div>
-            </div>
-          </div>
-        ) : (
-          <p></p>
-        )}
-        <Slide right duration={500}>
           <div className="subContainer" id="program">
             <h4>{result.name}</h4>
             <div className="liContainer">
@@ -157,8 +158,7 @@ function Hero(props) {
 
             <p>{result.info}</p>
           </div>
-        </Slide>
-        <Slide right duration duration={1000}>
+
           <div className="subContainer lastContainer" id="food">
             <h4>{result.name1}</h4>
 
@@ -180,8 +180,9 @@ function Hero(props) {
             </div>
             <img src={runlogo} className="runLogo" alt="run logo" />
           </div>
-        </Slide>
-        <NavBar />
+
+          <NavBar />
+        </div>
       </div>
     </div>
   );
