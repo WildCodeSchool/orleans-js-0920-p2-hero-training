@@ -10,6 +10,10 @@
   margin: 0;
 }
 
+.container {
+  height: 100vh;
+}
+
 .largeContainer {
   display: flex;
   flex-direction: column;
@@ -63,7 +67,7 @@
 
 .container h3 {
   margin-top: 0;
-  margin-bottom: var(--spacing-medium);
+  margin-bottom: 0;
   font-size: 28px;
   color: azure;
   --color1: rgb(0, 255, 255);
@@ -117,14 +121,18 @@
   text-align: center;
   background-color: var(--main-color);
   margin-top: var(--spacing-large);
+  padding: var(--spacing) 0px;
   z-index: 5;
-  padding-bottom: var(--spacing-medium);
   width: 100vw;
+}
+.subContainer1 h3 {
+  text-align: center;
+  font-family: var(--main-font);
 }
 
 .subContainer {
   background-color: var(--main-color);
-  margin-top: var(--spacing-large);
+  margin: var(--spacing-large) 0px;
   z-index: 5;
   padding-bottom: var(--spacing-medium);
   width: 100vw;
@@ -133,8 +141,7 @@
   align-items: center;
 }
 
-.subContainer h3,
-.subContainer1 h3 {
+.subContainer h3 {
   text-align: center;
   margin-bottom: var(--spacing-medium);
   padding-top: var(--spacing-medium);
@@ -220,8 +227,8 @@ p {
   margin-bottom: 75px;
 }
 
-.runLogo{
-  width: 50%;
+.runLogo {
+  display: none;
 }
 
 .subContainer h4 {
@@ -252,7 +259,6 @@ p {
   .liContainer li {
     font-size: 30px;
   }
-
 }
 
 @media screen and (min-width: 1024px) {
@@ -283,19 +289,20 @@ p {
   .subContainer1 {
     width: 100%;
     border-radius: 10%;
+    margin: var(--spacing-large) 0px;
   }
 
   .subContainer {
     width: 30%;
     border-radius: 10%;
   }
-  
+
   .subContainer li {
     font-size: 28px;
   }
 
   .lastContainer {
-    margin-bottom: 0;
+    margin-bottom: 32px;
   }
 
   .liContainer {
@@ -306,15 +313,10 @@ p {
     padding: 32px;
   }
 
-  .lastContainer img {
-    width: 50%;
-  }
-
   .subContainer:hover {
     filter: blur(0px);
     transform: scale(1.02);
     box-shadow: 0 8px 20px 0px rgba(0, 0, 0, 0.125);
     transition: 0.5s linear;
   }
-  
 }

@@ -1,8 +1,58 @@
 @import "../../App.css";
 
+.btnList {
+  box-shadow: inset 0px 1px 3px 0px #91b8b3;
+  background: linear-gradient(to bottom, #040505 5%, #2a2e2e 100%);
+  background-color: #040505;
+  border-radius: 25px;
+  border: 2px solid #303030;
+  display: inline-block;
+  cursor: pointer;
+  color: #e3eceb;
+  font-family: var(--main-font);
+  font-size: 21px;
+  padding: 11px 23px;
+  text-shadow: 0px -1px 0px #2b665e;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: var(--spacing-medium);
+}
+
+.btnList:hover {
+  background: linear-gradient(to bottom, #2a2e2e 5%, #040505 100%);
+  background-color: #2a2e2e;
+}
+
+.btnList:active {
+  position: relative;
+  top: 1px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination p {
+  font-family: var(--main-font);
+  color: var(--main-color);
+  letter-spacing: 4px;
+  color: azure;
+  --color1: rgb(0, 255, 255);
+  --color2: rgb(46, 16, 16);
+  --color3: dodgerblue;
+  --color4: blue;
+  --interval: 1s;
+  text-shadow: 0 0 5px var(--color1), 0 0 5px var(--color2),
+    0 0 5px var(--color3), 0 0 5px var(--color4);
+  margin-top: 0;
+}
+
 .loading {
   margin-top: 500px;
 }
+
 .home {
   background-image: url("https://zupimages.net/up/20/45/mgli.jpg");
   -webkit-background-size: cover;
@@ -100,6 +150,7 @@
   box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
     0 15px 40px rgba(166, 173, 201, 0.5);
 }
+
 .mainHero img:hover {
   box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
     0 15px 40px rgba(166, 173, 201, 1);
@@ -113,6 +164,7 @@
   margin-top: 56px;
   cursor: pointer;
 }
+
 .mainHero h3 {
   font-size: 28px;
   color: azure;
@@ -127,21 +179,38 @@
   filter: saturate(60%);
   animation: flicker steps(100) var(--interval) 1s infinite;
 }
+
 .heroLineUpSmallContainer {
   height: 100vh;
 }
+
 .heroLineUpSmallContainer section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
 .primaryContainer {
   display: none;
 }
+
 .buttonMobile {
   width: 20%;
 }
+
+@media screen and (min-width: 300px) and (max-width: 1023px) {
+  .pagination {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .btnList {
+    display: none;
+  }
+}
+
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .mainHero {
     margin: 28px 100px;
@@ -164,10 +233,10 @@
     border-radius: 10%;
     font-size: 20px;
   }
+
   .primaryContainer {
     display: flex;
     align-items: center;
-    padding: 3.35%;
     justify-content: space-between;
   }
 
@@ -179,14 +248,17 @@
   .heroLineUpSmallContainer {
     display: none;
   }
+
   .mainHero {
     margin: 0px 0px;
     margin-top: 56px;
   }
+
   .buttonDesktop {
     display: flex;
     width: 10%;
   }
+
   .buttonContainer {
     display: none;
   }
@@ -196,14 +268,17 @@
   .mainHero {
     margin: 28px 20px;
   }
+
   .buttonContainer {
     display: none;
   }
 }
+
 @media screen and (min-width: 1650px) {
   .mainHero {
     margin: 28px 100px;
   }
+
   .buttonContainer {
     display: none;
   }
@@ -213,6 +288,7 @@
   .mainHero {
     margin: 28px 100px;
   }
+
   .buttonContainer {
     display: none;
   }
@@ -232,6 +308,7 @@
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
+
 @-webkit-keyframes rotateOut {
   0% {
     -webkit-transform-origin: center;
@@ -246,6 +323,7 @@
     opacity: 1;
   }
 }
+
 @keyframes rotateOut {
   0% {
     -webkit-transform-origin: center;
