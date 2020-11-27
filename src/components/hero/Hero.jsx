@@ -3,9 +3,10 @@ import { useEffect, useState } from "react";
 import Header from "../header/Header";
 import NavBar from "../navbar/NavBar";
 import "./Hero.css";
-import CircularProgress from "@material-ui/core/CircularProgress";
 import axios from "axios";
 import runlogo from "../../assets/runlogo.png";
+import shiel from '../../assets/shiel.png';
+
 
 function Hero(props) {
   const [params] = useState(props.match.params);
@@ -32,7 +33,10 @@ function Hero(props) {
   if (isLoadingHero || isLoadingSport) {
     return (
       <div className="loadingPage">
-        <CircularProgress className="loading" />
+        <div className="loadingContainer">
+          <img src={shiel} alt="" className="rotating"/>
+          <p>Loading</p>
+        </div>
       </div>
     );
   }
@@ -55,10 +59,10 @@ function Hero(props) {
   } else {
     result = "none";
   }
-  
+
   return (
     <div>
-      <div className="container" >
+      <div className="container">
         <Header />
         <div
           style={getHeros[params.id] ? backGround : "red"}
@@ -133,7 +137,6 @@ function Hero(props) {
           ) : (
             <p></p>
           )}
-
           <div className="subContainer" id="program">
             <h4>{result.name}</h4>
             <div className="liContainer">
@@ -158,7 +161,6 @@ function Hero(props) {
 
             <p>{result.info}</p>
           </div>
-
           <div className="subContainer lastContainer" id="food">
             <h4>{result.name1}</h4>
 
@@ -172,7 +174,7 @@ function Hero(props) {
               <li>{result.food7} </li>
               <li>{result.food8} </li>
             </div>
-            <div className="difficultyLevels">
+            <div className="adviceContainer">
               <h6>Advice</h6>
               <div className="difficultyLevelsSmallContainer">
                 <p>{result.quotes}</p>
