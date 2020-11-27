@@ -3,12 +3,65 @@
 .loadingPage {
   background-image: url("../../assets/mgli.jpg");
   height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  
 }
 
-.loading {
-  padding: 0;
-  margin: 0;
+.loadingContainer{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
+
+.adviceContainer{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.adviceContainer h6{
+  margin: 35px 0 0 0;
+  font-size: 28px;
+  color: azure;
+  --color1: rgb(0, 255, 255);
+  --color2: rgb(46, 16, 16);
+  --color3: dodgerblue;
+  --color4: blue;
+  --interval: 1s;
+  text-shadow: 0 0 5px var(--color1), 0 0 5px var(--color2),
+    0 0 5px var(--color3), 0 0 5px var(--color4);
+  will-change: filter, color;
+  filter: saturate(60%);
+  animation: flicker steps(100) var(--interval) 1s infinite;
+  padding: 24px;
+  font-family: var(--main-font);
+}
+
+.adviceContainer p {
+  margin:0;
+  text-align: left;
+}
+
+
+@keyframes rotating {
+  from{
+      -webkit-transform: rotate(0deg);
+  }
+  to{
+      -webkit-transform: rotate(360deg);
+  }
+}
+
+.rotating {
+  animation: rotating 2s linear infinite;
+  width: 60px;
+}
+
+
 
 .container {
   height: 100vh;
@@ -148,8 +201,7 @@
   font-family: var(--main-font);
 }
 
-.subContainer li,
-p {
+.subContainer li{
   list-style: none;
   margin-right: auto;
   margin-left: auto;
@@ -160,6 +212,10 @@ p {
 
 .subContainer p {
   padding: 0px 33px;
+  font-family: var(--main-font);
+  font-size: 24px;
+  color: azure;
+  
 }
 
 .difficultyLevels {

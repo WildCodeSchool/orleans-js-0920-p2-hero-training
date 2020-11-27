@@ -1,10 +1,10 @@
 import React from "react";
 import "./Home.css";
 import Header from "../header/Header.jsx";
-import CircularProgress from "@material-ui/core/CircularProgress";
 import { Link } from "react-router-dom";
 import shortid from "shortid";
 import { AiOutlineFileSearch } from "react-icons/ai";
+import shiel from "../../assets/shiel.png";
 
 function HeroCircle({ image, name }) {
   return (
@@ -125,7 +125,12 @@ class Home extends React.Component {
                     />
                   </Link>
                 ) : (
-                  <CircularProgress className="loading" />
+                  <div className="loadingPageHome">
+                    <div className="loadingContainerHome">
+                      <img src={shiel} alt="" className="rotating" />
+                      <p>Loading</p>
+                    </div>
+                  </div>
                 )}
                 {this.state.heros ? (
                   <Link to={secondeHeroUrl} style={{ textDecoration: "none" }}>
@@ -135,7 +140,9 @@ class Home extends React.Component {
                     />
                   </Link>
                 ) : (
-                  <p></p>
+                  <div className="loadingPageHome">
+                    
+                  </div>
                 )}
                 {this.state.heros ? (
                   <Link to={thirdHeroUrl} style={{ textDecoration: "none" }}>
@@ -183,7 +190,12 @@ class Home extends React.Component {
                   <HeroCircle {...this.state.heros[this.state.sixHero]} />
                 </Link>
               ) : (
-                <CircularProgress className="mainHero" />
+                <div className="loadingPageHome">
+                    <div className="loadingContainerHome">
+                      <img src={shiel} alt="" className="rotating" />
+                      <p>Loading</p>
+                    </div>
+                  </div>
               )}
               <div className="smallButtonContainer">
                 <button className="glow-on-hover" onClick={this.decrementHero1}>
